@@ -19,8 +19,8 @@ define bgm_11 = "audio/BGM/あたたかな雪_ゆうり(from Yuli Audio Craft).o
 define bgm_12 = "audio/BGM/あの空に向かって_ゆうり(from Yuli Audio Craft).ogg"#日常氛围曲，钢琴，偏平淡
 define bgm_13 = "audio/BGM/いつものカフェで待ち合わせ_秦暁.ogg"#djf篇接客用曲子
 define bgm_14 = "audio/BGM/かつての聖域_ゆうり(from Yuli Audio Craft).ogg"#阴森氛围曲子
-define bgm_15 = "audio/BGM/ほのぼのいい天気_ゆうり(from Yuli Audio Craft).ogg"#诡异氛围曲子
-define bgm_16 = "audio/BGM/タタリ_ゆうり(from Yuli Audio Craft).ogg"#笛为主，明快
+define bgm_15 = "audio/BGM/ほのぼのいい天気_ゆうり(from Yuli Audio Craft).ogg"#笛为主，欢快氛围
+define bgm_16 = "audio/BGM/タタリ_ゆうり(from Yuli Audio Craft).ogg"#诡异氛围曲子
 define bgm_17 = "audio/BGM/別れの季節_alaki paca.ogg"#钢琴曲，略带忧伤，bxh结尾用
 define bgm_18 = "audio/BGM/君影草_すもち.ogg"#钢琴曲，略带忧伤，djf结尾用
 define bgm_19 = "audio/BGM/夢の中を泳ぐ魚_ゆうきわたる.ogg"#平淡氛围，钢琴曲，梦境用
@@ -71,7 +71,107 @@ define sound_31 = "audio/BGS/Smartphone-Ringtone02-10(Speaker).ogg"#手机铃声
 define sound_32 = "audio/BGS/Thunder-Real_Ambi03-1.ogg"#雷声
 
 
- 
+image Rain_0 = "gui/effect/rain_0_0.png"
+image Rain_1 = "gui/effect/rain_0_1.png"
+image Rain_2 = "gui/effect/rain_0_2.png"
+image Rain_3 = "gui/effect/rain_0_3.png"
+image BigRain_0 = "gui/effect/rain_0_0.png"
+image BigRain_1 = "gui/effect/rain_0_1.png"
+image BigRain_2 = "gui/effect/rain_0_2.png"
+image BigRain_3 = "gui/effect/rain_0_3.png"
+image yume_0 = "gui/effect/effect_yume_1.png"
+image yume_1 = "gui/effect/effect_yume_2.png"
+image yume_2 = "gui/effect/effect_yume_3.png"
+image yume_3 = "gui/effect/effect_yume_4.png"
+image yume_4 = "gui/effect/effect_yume_4.png"
+image yume_5 = "gui/effect/effect_yume_3.png"
+image yume_6 = "gui/effect/effect_yume_2.png"
+image yume_7 = "gui/effect/effect_yume_1.png"
+image yume_back = "gui/effect/back_yume.png"
+
+transform Rain_ts(x1, y1, x2, y2, x3, y3, t1, t2, t3, y_t1=0.16, y_t2=0.16, y_t3=0.16, y_add=500):
+    blur 2
+    xpos x1 ypos y1-y_add yoffset 0
+    easeout y_t1 yoffset y_add 
+    ypos 1200
+    pause t1
+    xpos x2 ypos y2-y_add yoffset 0
+    easeout y_t2 yoffset y_add 
+    ypos 1200
+    pause t2
+    xpos x3 ypos y3-y_add yoffset 0
+    easeout y_t3 yoffset y_add 
+    ypos 1200
+    pause t3
+    repeat
+
+label Rain:
+    show Rain_0 onlayer screens zorder 1 at Rain_ts(1324,846,1392,124,99,535,0.08,0.18,0.24)
+    show Rain_1 onlayer screens zorder 1 at Rain_ts(1506,95,633,276,248,848,0.02,0.35,0.13)
+    show Rain_2 onlayer screens zorder 1 at Rain_ts(643,873,713,735,742,298,0.25,0.1,0.15)
+    show Rain_3 onlayer screens zorder 1 at Rain_ts(830,300,1111,563,357,823,0.34,0.08,0.08)
+    return
+label Rain_(ti=1.5):
+    hide Rain_0 onlayer screens
+    hide Rain_1 onlayer screens
+    hide Rain_2 onlayer screens
+    hide Rain_3 onlayer screens
+    with Dissolve(ti)
+    return
+label BigRain:
+    show Rain_0 onlayer screens zorder 1 at Rain_ts(1324,846,1392,124,99,535,0.08,0.18,0.24)
+    show Rain_1 onlayer screens zorder 1 at Rain_ts(1506,95,633,276,248,848,0.02,0.35,0.13)
+    show Rain_2 onlayer screens zorder 1 at Rain_ts(643,873,713,735,742,298,0.25,0.1,0.15)
+    show Rain_3 onlayer screens zorder 1 at Rain_ts(830,300,1111,563,357,823,0.34,0.08,0.08)
+    show BigRain_0 onlayer screens zorder 1 at Rain_ts(760,279,822,331,804,636,0.12,0.26,0.12)
+    show BigRain_1 onlayer screens zorder 1 at Rain_ts(1159,768,1388,488,396,363,0.17,0.29,0.04)
+    show BigRain_2 onlayer screens zorder 1 at Rain_ts(896,359,478,796,940,373,0.33,0.04,0.13)
+    show BigRain_3 onlayer screens zorder 1 at Rain_ts(43,467,903,882,78,609,0.11,0.09,0.30)
+    return
+label BigRain_(ti=1.5):
+    hide Rain_0 onlayer screens
+    hide Rain_1 onlayer screens
+    hide Rain_2 onlayer screens
+    hide Rain_3 onlayer screens
+    hide BigRain_0 onlayer screens
+    hide BigRain_1 onlayer screens
+    hide BigRain_2 onlayer screens
+    hide BigRain_3 onlayer screens
+    with Dissolve(ti)
+    return
+label yume:
+    show yume_back onlayer screens zorder 0
+    show yume_0 onlayer screens zorder 1 at Rain_ts(1324,0,1392,124,99,0,0.08,0.18,0.24,0.16,0.16,0.16,0)
+    show yume_1 onlayer screens zorder 1 at Rain_ts(1506,95,633,276,248,848,0.02,0.35,0.13,0.16,0.16,0.16,0)
+    show yume_2 onlayer screens zorder 1 at Rain_ts(643,873,713,735,742,298,0.25,0.1,0.15,0.16,0.16,0.16,0)
+    show yume_3 onlayer screens zorder 1 at Rain_ts(830,0,1111,0,357,823,0.34,0.08,0.08,0.16,0.16,0.16,0)
+    show yume_4 onlayer screens zorder 1 at Rain_ts(760,279,822,331,804,636,0.12,0.26,0.12,0.16,0.16,0.16,0)
+    show yume_5 onlayer screens zorder 1 at Rain_ts(1159,768,1388,488,396,363,0.17,0.29,0.04,0.16,0.16,0.16,0)
+    show yume_6 onlayer screens zorder 1 at Rain_ts(896,359,478,796,940,373,0.33,0.04,0.13,0.16,0.16,0.16,0)
+    show yume_7 onlayer screens zorder 1 at Rain_ts(43,0,903,882,78,609,0.11,0.09,0.30,0.16,0.16,0.16,0)
+    return
+label yume_(ti=1.5):
+    hide yume_back onlayer screens
+    hide yume_0 onlayer screens
+    hide yume_1 onlayer screens
+    hide yume_2 onlayer screens
+    hide yume_3 onlayer screens
+    hide yume_4 onlayer screens
+    hide yume_5 onlayer screens
+    hide yume_6 onlayer screens
+    hide yume_7 onlayer screens
+    with Dissolve(ti)
+    return
+
+define eyeopen = ImageDissolve("gui/transition/eyesopenclose.png", 1.0)
+define eyeclose = ImageDissolve("gui/transition/eyesopenclose.png", 1.0, reverse=True)
+define dooropen = ImageDissolve("gui/transition/dooropen.png", 1.5)
+define doorclose = ImageDissolve("gui/transition/dooropen.png", 1.5, reverse=True)
+define yumein = ImageDissolve("gui/transition/yume_in.png",1.0)
+define yumeout = ImageDissolve("gui/transition/yume_out.png",1.0)
+define leftflash = ImageDissolve("gui/transition/left.png",0.5)
+define rightflash = ImageDissolve("gui/transition/right.png",0.5)
+
 # init -1 python:
 #     from functools import partial
 #     def char_fade(char, event_name, *args, **kwargs):
@@ -93,7 +193,11 @@ define sound_32 = "audio/BGS/Thunder-Real_Ambi03-1.ogg"#雷声
 #                 renpy.show(x[0] + " " + x[1], at_list=[dark_out])
 
 define bxh = Character("包馨荷", who_color="#d7ee05", what_prefix="「", what_suffix="」", voice_tag="bxh")#, callback=partial(char_fade,"包馨荷"))
+define bxh_sub = Character("女孩子", who_color="#d7ee05", what_prefix="「", what_suffix="」", voice_tag="bxh")
+
 define djf = Character("杜绛枫", who_color="#da21bb", what_prefix="「", what_suffix="」", voice_tag="djf")#, callback=partial(char_fade,"杜绛枫"))
+define djf_sub = Character("女孩子", who_color="#da21bb", what_prefix="「", what_suffix="」", voice_tag="djf")
+
 define gmr = Character("郭茉渃", who_color="#ffffe6", what_prefix="「", what_suffix="」", voice_tag="gmr")#, callback=partial(char_fade,"郭茉渃"))
 define cy = Character("常远", who_color="#9292ff", what_prefix="「", what_suffix="」")#, callback=partial(char_fade,"常远"))
 
@@ -105,6 +209,10 @@ define kamisama2 = Character("『神』", who_color="#7c0029", what_prefix="「"
 
 label start:
 stop music fadeout 1.0
-
+play sound sound_27
+$ transition_template = preferences.transitions
+$ preferences.transitions = 2
+with fade
+$ preferences.transitions = transition_template
 call Chapter_0
 return
