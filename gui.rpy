@@ -86,7 +86,7 @@ define gui.title_text_size = 63
 ## 标题和游戏菜单 #####################################################################
 
 ## 标题菜单和游戏菜单使用的图像。
-define gui.main_menu_background = "gui/main_menu.png"
+define gui.main_menu_background = "gui/main_menu.jpg"
 define gui.game_menu_background = "gui/game_menu.png"
 
 
@@ -95,7 +95,7 @@ define gui.game_menu_background = "gui/game_menu.png"
 ## 这些变量控制对话如何在屏幕上逐行显示。
 
 ## 包含对话的文本框的高度。
-define gui.textbox_height = 232
+define gui.textbox_height = 255
 
 ## 文本框在屏幕上的垂直位置。0.0 是顶部，0.5 是居中，1.0 是底部。
 define gui.textbox_yalign = 1.0
@@ -114,7 +114,7 @@ define gui.namebox_width = None
 define gui.namebox_height = None
 
 ## 包含角色名字的方框的边界尺寸，以左、上、右、下顺序排列。
-define gui.namebox_borders = Borders(45, 0, 5, 5)
+define gui.namebox_borders = Borders(40, -5, 0, 0)
 
 ## 若为 True，则名字框的背景将平铺；若为 False，则名字框的背景将缩放。
 define gui.namebox_tile = True
@@ -123,7 +123,7 @@ define gui.namebox_tile = True
 ## 对话相对于文本框的位置。可以是相对于文本框从左侧或顶部起的整数像素，或设为
 ## 0.5 来居中。
 define gui.dialogue_xpos = 335
-define gui.dialogue_ypos = 40
+define gui.dialogue_ypos = 30
 
 ## 对话文本的最大宽度，以像素为单位。
 define gui.dialogue_width = 930
@@ -321,7 +321,7 @@ define gui.unscrollable = "hide"
 define config.history_length = 250
 
 ## 历史屏幕条目的高度，或设置为 None 以使高度变量自适应。
-define gui.history_height = 150
+define gui.history_height = 200
 
 ## 在历史记录屏幕条目之间添加额外的空间。
 define gui.history_spacing = 0

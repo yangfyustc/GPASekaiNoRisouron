@@ -143,7 +143,7 @@ screen say(who, what):
                 ## 调节姓名框透明度 
                 background im.Alpha("gui/namebox.png", persistent.textbox_alpha)
                 style "namebox"
-                text who id "who"
+                text who id "who" outlines [(2,"#00000088",0,0)]
 
         ## 已读文本变色
         if persistent.text_color_change == True:
@@ -157,7 +157,7 @@ screen say(who, what):
 
         ## 不允许已读文本变色
         else:
-            text what id "what"
+            text what id "what" outlines [(2,"#00000088",0,0)]
         # text what id "what"
 
 
@@ -2236,7 +2236,7 @@ screen history():
                     
                     window:
                         background None            
-                        ysize 165
+                        ysize 200
                         ## 此代码可确保如果 history_height 为 None 时仍可正常显示条目。
                         # has fixed:
                         #     yfit True
@@ -2262,6 +2262,7 @@ screen history():
                                         ## 的话。
                                         if "color" in h.who_args:
                                             text_color h.who_args["color"]
+                                        
 
                                 $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                                 text what:
@@ -2342,6 +2343,7 @@ style history_name:
     xanchor gui.history_name_xalign
     ypos gui.history_name_ypos
     xsize gui.history_name_width
+    outlines [(1,"#00000088",0,0)]
 
 style history_name_text:
     min_width gui.history_name_width
@@ -3240,7 +3242,7 @@ define bubble.expand_area = {
 
 # style main_menu_frame:
 #     variant "small"
-#     background "gui/phone/overlay/main_menu.png"
+#     background "gui/phone/overlay/main_menu.jpg"
 
 # style game_menu_outer_frame:
 #     variant "small"

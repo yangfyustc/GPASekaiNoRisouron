@@ -69,23 +69,23 @@ define config.main_menu_music = "audio/BGM/桜吹雪の誓い_ゆうり(from Yul
 
 ## 进入或退出游戏菜单。
 
-define config.enter_transition = ImageDissolve("gui/transition/left.png", 0.3)
-define config.exit_transition = ImageDissolve("gui/transition/right.png", 0.3)
+define config.enter_transition = Pixellate(0.3,6)
+define config.exit_transition = Pixellate(0.3,6)
 
 
 ## 各个游戏菜单之间的转场。
 
-define config.intra_transition = ImageDissolve("gui/transition/whirl.png", 0.3)
+define config.intra_transition = Pixellate(0.3,6)
 
 
 ## 载入游戏后使用的转场。
 
-define config.after_load_transition = ImageDissolve("gui/transition/dooropen.png", 1.0)
+define config.after_load_transition = None
 
 
 ## 在游戏结束之后进入主菜单时使用的转场。
 
-define config.end_game_transition = fade
+define config.end_game_transition = None
 
 
 ## 用于控制在游戏开始标签不存在时转场的变量。作为替代，在显示初始化场景后使用

@@ -165,8 +165,8 @@ label yume_(ti=1.5):
 
 define eyeopen = ImageDissolve("gui/transition/eyesopenclose.png", 1.0)
 define eyeclose = ImageDissolve("gui/transition/eyesopenclose.png", 1.0, reverse=True)
-define dooropen = ImageDissolve("gui/transition/dooropen.png", 1.5)
-define doorclose = ImageDissolve("gui/transition/dooropen.png", 1.5, reverse=True)
+define dooropen = ImageDissolve("gui/transition/dooropen.png", 1.0)
+define doorclose = ImageDissolve("gui/transition/dooropen.png", 1.0, reverse=True)
 define yumein = ImageDissolve("gui/transition/yume_in.png",1.0)
 define yumeout = ImageDissolve("gui/transition/yume_out.png",1.0)
 define leftflash = ImageDissolve("gui/transition/left.png",0.5)
