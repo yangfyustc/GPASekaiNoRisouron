@@ -1186,6 +1186,7 @@ cy "睡觉吧。"
 "我本以为我会惴惴不安到睡不着觉，\n但一沾枕头，我就深深地陷入了梦乡。"
 scene black with yumein
 play music bgm_19 fadein 0.5
+play sound sound_28
 call yume from _call_yume_6
 
 kurokage "你们知道吗，我今天才听有个学长说，\nGPA不够高的话，是不配找女朋友的！"
@@ -1705,6 +1706,7 @@ djf "我也不知道，你也别问我。"
 scene black with leftflash
 scene black with yumein
 play music bgm_19 fadein 0.5
+play sound sound_28
 call yume from _call_yume_7
 
 kurokage "跟你一起进——的——，人家都在学洋文准备出国了。"
@@ -1734,6 +1736,8 @@ stop sound
 scene black with leftflash
 scene bg _test with leftflash
 play music bgm_11
+play sound sound_29
+show view_djf onlayer screens zorder 2
 # 转1958内景，过场图或者角落持续显示 『杜绛枫视角』
 bxh "绛枫，小常他怎么还没来？你知道吗？"
 
@@ -1843,6 +1847,7 @@ djf "馨荷姐她，是不是也『想起来』了？"
 
 我听不到任何回应，\n只能听到，不断回响的滴答声，而已。
 """
+hide view_djf onlayer screens 
 stop music
 play sound sound_20
 scene black with doorclose

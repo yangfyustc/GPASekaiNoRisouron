@@ -2,6 +2,7 @@ label Chapter_3:
 #Chapter 3
 scene black with yumein
 play music bgm_19 fadein 0.5
+play sound sound_28
 call yume
 kurokage "你刚刚从哪里出来？"
 
@@ -194,7 +195,7 @@ play music bgm_21 fadein 0.5
 
 "实在是让我感觉有点奇怪，所以直到现在，我还记得。"
 scene bg _test with yumein
-call yume
+play sound sound_28
 play music bgm_12 fadein 0.5
 bxh "小常啊，你绛枫姐刚刚教你做了啥？"
 
@@ -449,7 +450,7 @@ cy "早上先吃个早饭，然后顺着银城路下去到南八里，\n先看�
 
 cy "下午打个车，继续顺着银城路下去，\n到那边的海洋公园……"
 
-cy "晚上回鹭州科技大学，在门口的{i}Fabio{/i}吃个晚饭，\n最后在鹭州科技大学里面转一圈……"
+cy "晚上回鹭州科技大学，在门口的费比欧吃个晚饭，\n最后在鹭州科技大学里面转一圈……"
 
 """
 面前的草稿纸上，满是涂改的痕迹。\n隐约可以看到被划掉的逍遥津、徽园、大蜀山、植物园几个字。
@@ -1426,6 +1427,8 @@ cy "馨荷姐！"
 scene black with yumein
 play music bgm_25 fadein 0.5
 call yume#过场动画，背景虚化带粒子效果。实验室背景。插入『包馨荷视角』标签。
+play sound sound_29
+show view_bxh onlayer screens zorder 2
 kurokage "包师姐，你也回咱们课题组来做研究员了吗？"#包馨荷的同龄师妹，迟三年进组，25岁提前毕业，27岁做完博后回来拿教职。
 
 bxh "……"
@@ -1637,6 +1640,7 @@ bxh "好。"
 
 这个工作做完，之后再补一个其他的工作，\n就差不多可以毕业了。
 """
+hide view_bxh onlayer screens 
 scene black with leftflash
 call yume_
 scene bg _test with yumeout
@@ -1703,7 +1707,7 @@ cy "欸？我记得好像是我想说些什么，然后说不出来……"
 
 bxh "那个时候，是『神』给你的语言加了屏蔽。"
 
-bxh "也是在那之后，是『神』亲口告诉我还有绛枫，说要让你进入1958。"
+bxh "也是在那之后，是『神』亲口告诉我还有绛枫，\n说要让你进入1958。"
 
 "是这个事情吗？模模糊糊的，好像从来没发生过一样。\n但是，又感觉馨荷姐说的，不像是谎话。"
 
@@ -1865,6 +1869,7 @@ cy "接下来是……"
 "明明不愿意去回想，却又不得不去回想。"
 
 scene black with dissolve
+play sound sound_28
 call yume#只放立绘，不放cg
 
 bxh "我从这个世界的『神』那里，延续的这一点生命，\n已经到此为止了。"
@@ -1905,6 +1910,10 @@ cy "别胡思乱想了，睡觉吧。"
 "空调开得再暖和，也无法温暖眼角残留的、\n馨荷姐抹去我眼泪时的那份冰冷的触感。"
 
 "我自己都忘记了，我到底是什么时候，\n又陷入了噩梦之中。"
-
+stop music
+play sound sound_20
+scene black with doorclose
+scene bg _test with dooropen
+#转黑屏
 call Chapter_4 from _call_Chapter_4
 return

@@ -89,6 +89,8 @@ stop sound
 scene black with leftflash
 scene bg _test with leftflash
 #切djf视角，场景换1958内部。
+play sound sound_29
+show view_djf onlayer screens zorder 2
 play music bgm_26
 """
 除了我之外没有一个人的1958，还真是有点不习惯。
@@ -176,6 +178,7 @@ djf "常远……这个名字，我应该没在哪里听到过吧？"
 
 我不敢，再往前迈进了。
 """
+hide view_djf onlayer screens 
 scene black with rightflash
 scene bg _test with rightflash #转常远视角，换宿舍内景。
 play music bgm_26
@@ -1207,6 +1210,7 @@ stop music fadeout 0.5
 
 scene black with dissolve
 play music bgm_25 fadein 0.5
+play sound sound_28
 call yume
 
 kurokage "常远？我们今天都去游戏厅玩，你去不去啊？"
