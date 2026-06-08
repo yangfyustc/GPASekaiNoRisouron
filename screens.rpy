@@ -2561,6 +2561,7 @@ init python:
     mr.add("audio/BGM/迫る闇_ゆうり(from Yuli Audio Craft).ogg", always_unlocked = True)
     mr.add("audio/BGM/陰謀論_ゆうり(from Yuli Audio Craft).ogg", always_unlocked = True)
     mr.add("audio/BGM/雪、吹き乱れて(Snow,blizzarding)_蒲鉾さちこ.ogg", always_unlocked = True)
+    mr.add("audio/BGM/Last_Echo_of_Summer_Light_松浦洋介.ogg", always_unlocked = True)
 
 
     #更多音乐请自行添加
@@ -2734,6 +2735,7 @@ screen extra(cg_page=0):
             textbutton "Close Love\n-ゆうり(from Yuli Audio Craft)" action mr.Play("audio/BGM/Close_Love_ゆうり(from Yuli Audio Craft).ogg")
             textbutton "Embers of a Vanishing Sky\n-MFP(Marron Fields Production)" action mr.Play("audio/BGM/Embers_of_a_Vanishing_Sky_MFP(Marron Fields Production).ogg")
             textbutton "Fighter's Edge\n-gooset" action mr.Play("audio/BGM/Fighter's_Edge_gooset.ogg")
+            textbutton "Last_Echo_of_Summer_Light\n-松浦洋介" action mr.Play("audio/BGM/Last_Echo_of_Summer_Light_松浦洋介.ogg")
             textbutton "Overcome\n-のる" action mr.Play("audio/BGM/Overcome_のる.ogg")
             textbutton "Umbra Protocol\n-松浦洋介" action mr.Play("audio/BGM/Umbra_Protocol_松浦洋介.ogg")
             textbutton "Under the Blue Fizz\n-松浦洋介" action mr.Play("audio/BGM/Under_the_Blue_Fizz_松浦洋介.ogg")

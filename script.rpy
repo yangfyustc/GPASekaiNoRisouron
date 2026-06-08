@@ -27,7 +27,7 @@ define bgm_19 = "audio/BGM/夢の中を泳ぐ魚_ゆうきわたる.ogg"#平淡�
 define bgm_20 = "audio/BGM/星空の導き_alaki paca.ogg"#钢琴曲，抒情
 define bgm_21 = "audio/BGM/晴れやかな日の午後に_しんさんわーくす.ogg"#日常氛围，钢琴为主，欢快
 define bgm_22 = "audio/BGM/暗闇を駆け抜けろ！_alaki paca.ogg"#激烈，电子乐
-define bgm_23 = "audio/BGM/桜が散る時_yuhei komatsu.ogg"#钢琴曲，抒情，finale用
+define bgm_23 = "audio/BGM/桜が散る時_yuhei komatsu.ogg"#钢琴曲，抒情，gmr结尾用
 define bgm_24 = "audio/BGM/桜吹雪の誓い_ゆうり(from Yuli Audio Craft).ogg"#Theme Song
 define bgm_25 = "audio/BGM/沈みゆく体、浮かぶ意識_alaki paca.ogg"#梦境用，感情更丰富一点
 define bgm_26 = "audio/BGM/祭りの夜_ゆうり(from Yuli Audio Craft).ogg"#铃为主，cy在房间里独自回忆时用
@@ -36,6 +36,7 @@ define bgm_28 = "audio/BGM/路地裏ファンタジー_yuhei komatsu.ogg"#笛为
 define bgm_29 = "audio/BGM/迫る闇_ゆうり(from Yuli Audio Craft).ogg"#铃为主，诡异氛围
 define bgm_30 = "audio/BGM/陰謀論_ゆうり(from Yuli Audio Craft).ogg"#诡异、紧张氛围，管乐
 define bgm_31 = "audio/BGM/雪、吹き乱れて(Snow,blizzarding)_蒲鉾さちこ.ogg"#钢琴曲，抒情，适用于心绪不宁场景
+define bgm_32 = "audio/BGM/Last_Echo_of_Summer_Light_松浦洋介.ogg"#抒情曲
 
 define sound_1 = "audio/BGS/Angel03-3(High-Reverb).ogg"#kamisama入场效果音
 define sound_2 = "audio/BGS/Beverage_Can-Pull_Tab02-1.ogg"#开汽水罐效果音
@@ -69,6 +70,21 @@ define sound_29 = "audio/BGS/Scene-Flashback08-2(Short).ogg"#角色视角转换
 define sound_30 = "audio/BGS/Short_Accent12-1(Dry).ogg"#提示音
 define sound_31 = "audio/BGS/Smartphone-Ringtone02-10(Speaker).ogg"#手机铃声
 define sound_32 = "audio/BGS/Thunder-Real_Ambi03-1.ogg"#雷声
+define sound_33 = "audio/BGS/カーテン開ける音.ogg"
+define sound_34 = "audio/BGS/ジョッキで乾杯する音.ogg"
+define sound_35 = "audio/BGS/ジョッキを置く音_水入り.ogg"
+define sound_36 = "audio/BGS/ベッドで抵抗する音(ふつうに).ogg"
+define sound_37 = "audio/BGS/本を置く音.ogg"
+define sound_38 = "audio/BGS/机の中のものを漁る音.ogg"
+define sound_39 = "audio/BGS/教壇を叩く音.ogg"
+define sound_40 = "audio/BGS/手をたたく音.ogg"
+define sound_41 = "audio/BGS/下駄で歩く音　女性.ogg"
+define sound_42 = "audio/BGS/座る時のイスを引く音_01.ogg"
+define sound_43 = "audio/BGS/シャワーの扉開ける音、シャワーの扉閉める音.ogg"
+define sound_44 = "audio/BGS/blow.ogg"
+define sound_45 = "audio/BGS/窓ガラスが割れる音.ogg"
+
+
 
 
 image Rain_0 = "gui/effect/rain_0_0.png"
@@ -88,6 +104,9 @@ image yume_5 = "gui/effect/effect_yume_3.png"
 image yume_6 = "gui/effect/effect_yume_2.png"
 image yume_7 = "gui/effect/effect_yume_1.png"
 image yume_back = "gui/effect/back_yume.png"
+image view_bxh = "images/viewer/view_bxh.png"
+image view_djf = "images/viewer/view_djf.png"
+image view_gmr = "images/viewer/view_gmr.png"
 
 transform Rain_ts(x1, y1, x2, y2, x3, y3, t1, t2, t3, y_t1=0.16, y_t2=0.16, y_t3=0.16, y_add=500):
     blur 2
@@ -163,6 +182,18 @@ label yume_(ti=1.5):
     with Dissolve(ti)
     return
 
+image Hlight = "gui/effect/highlight.png"
+
+label highlight:
+    show Hlight onlayer screens zorder 0 
+    with ImageDissolve("gui/transition/highlight.png", 0.5)
+    return
+
+label highlight_:
+    hide Hlight onlayer screens
+    with ImageDissolve("gui/transition/highlight.png", 0.5, reverse=True)
+    return
+
 define eyeopen = ImageDissolve("gui/transition/eyesopenclose.png", 1.0)
 define eyeclose = ImageDissolve("gui/transition/eyesopenclose.png", 1.0, reverse=True)
 define dooropen = ImageDissolve("gui/transition/dooropen.png", 1.0)
@@ -171,6 +202,7 @@ define yumein = ImageDissolve("gui/transition/yume_in.png",1.0)
 define yumeout = ImageDissolve("gui/transition/yume_out.png",1.0)
 define leftflash = ImageDissolve("gui/transition/left.png",0.5)
 define rightflash = ImageDissolve("gui/transition/right.png",0.5)
+define toki = ImageDissolve("gui/transition/toki.png",0.5)
 
 # init -1 python:
 #     from functools import partial
@@ -199,10 +231,12 @@ define djf = Character("杜绛枫", who_color="#da21bb", what_prefix="「", what
 define djf_sub = Character("女孩子", who_color="#da21bb", what_prefix="「", what_suffix="」", voice_tag="djf")
 
 define gmr = Character("郭茉渃", who_color="#ffffe6", what_prefix="「", what_suffix="」", voice_tag="gmr")#, callback=partial(char_fade,"郭茉渃"))
+define gmr_sub = Character("女孩子", who_color="#ffffe6", what_prefix="「", what_suffix="」", voice_tag="gmr")
 define cy = Character("常远", who_color="#9292ff", what_prefix="「", what_suffix="」")#, callback=partial(char_fade,"常远"))
 
 define kurokage = Character("未知的黑影", who_color="#880bc2", what_prefix="「", what_suffix="」", voice_tag="others")
 define guest = Character("客人", who_color="#880bc2", what_prefix="「", what_suffix="」", voice_tag="others")
+define phone = Character("手机", who_color="#880bc2", what_prefix="「", what_suffix="」", voice_tag="others")
 
 define kamisama1 = Character("『？ ？ ？』", who_color="#7c0029", what_prefix="「", what_suffix="」", voice_tag="others")
 define kamisama2 = Character("『神』", who_color="#7c0029", what_prefix="「", what_suffix="」", voice_tag="others")
@@ -214,5 +248,5 @@ $ transition_template = preferences.transitions
 $ preferences.transitions = 2
 with fade
 $ preferences.transitions = transition_template
-call Chapter_0
+call Chapter_0 from _call_Chapter_0
 return
